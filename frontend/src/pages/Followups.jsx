@@ -1,0 +1,5 @@
+import { Activity, Bell, CalendarDays, Check } from 'lucide-react'
+import { PageHeading, Stat, LeadTable, demoLeads } from '../components/Shared'
+
+function Followups(){return <><PageHeading eyebrow="RELATIONSHIP MOMENTS" title="Follow through." description="A thoughtful follow-up can turn a first conversation into a lasting partnership."/><div className="stats-grid"><Stat label="Due today" value="05" delta="2 overdue" sub="needs attention" icon={CalendarDays}/><Stat label="This week" value="18" delta="+3" sub="scheduled touchpoints" icon={Activity}/><Stat label="Completed" value="42" delta="+11%" sub="this month" icon={Check}/><Stat label="Awaiting reply" value="09" delta="—" sub="open conversations" icon={Bell}/></div><section className="panel table-panel"><div className="panel-heading"><div><span className="eyebrow">FOLLOW-UP QUEUE</span><h3>Upcoming conversations</h3></div></div><LeadTable leads={demoLeads.filter(l=>l.nextFollowUp!=='—')} admin={true}/></section></>}
+export default Followups
